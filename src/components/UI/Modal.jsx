@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
 import classes from "./Modal.module.css";
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop} onClick={props.onClose} />;
 };
+
+Backdrop.propTypes = {
+  onClose: PropTypes.func,
+}
 
 const ModalOverlay = (props) => {
   return (
@@ -14,6 +19,10 @@ const ModalOverlay = (props) => {
     </div>
   );
 };
+
+ModalOverlay.propTypes = {
+  children: PropTypes.node,
+}
 
 const portalElement = document.getElementById("overlays");
 
@@ -30,6 +39,11 @@ const Modal = (props) => {
       )}
     </>
   );
+};
+
+Modal.propTypes = {
+  onClose: PropTypes.func,
+  children: PropTypes.node,
 };
 
 export default Modal;

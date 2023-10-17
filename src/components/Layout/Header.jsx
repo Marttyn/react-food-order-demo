@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import HeaderCartButton from "./HeaderCartButton";
 
 import mealsImage from "../../assets/meals.jpg";
@@ -17,5 +18,9 @@ const Header = ({ onShowCart }) => {
     </>
   );
 };
+
+Header.propTypes = {
+  onShowCart: PropTypes.func.isRequired,
+}
 
 export default Header;

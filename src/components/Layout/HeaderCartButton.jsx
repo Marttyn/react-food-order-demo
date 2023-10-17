@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import CartIcon from "../Cart/CartIcon";
 import CartContext from "../../store/cart-context";
 
@@ -15,7 +16,7 @@ const HeaderCartButton = (props) => {
     console.log("effect");
     setBtnIsHighlighted(true);
 
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setBtnIsHighlighted(false);
     }, 300);
   }, [cartCtx.items]);
@@ -38,5 +39,9 @@ const HeaderCartButton = (props) => {
     </button>
   );
 };
+
+HeaderCartButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+}
 
 export default HeaderCartButton;

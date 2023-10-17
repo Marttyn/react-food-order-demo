@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import CartContext from "./cart-context";
 
 const defaultCartState = {
@@ -91,6 +92,10 @@ const CartProvider = (props) => {
       {props.children}
     </CartContext.Provider>
   );
+};
+
+CartProvider.propTypes = {
+  children: PropTypes.node,
 };
 
 export default CartProvider;

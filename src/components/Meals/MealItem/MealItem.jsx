@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import MealItemForm from "./MealItemForm";
 import CartContext from "../../../store/cart-context";
 
@@ -31,5 +32,12 @@ const MealItem = ({ id, name, description, price }) => {
     </li>
   );
 };
+
+MealItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+}
 
 export default MealItem;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import CartContext from "../../store/cart-context";
@@ -43,6 +44,11 @@ const Cart = (props) => {
       </div>
     </Modal>
   );
+};
+
+// Inside your component class
+Cart.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Cart;
