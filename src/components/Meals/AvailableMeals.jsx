@@ -39,27 +39,23 @@ const AvailableMeals = () => {
 
   const mealsList = meals.map((meal) => <MealItem key={meal.id} {...meal} />);
 
+  let content = <p style={{ textAlign: "center" }}>Found no meals!</p>;
+
   if (isLoading) {
-    return (
-      <section className={classes.mealsLoading}>
-        <p>Loading...</p>
-      </section>
-    );
+    content = <p className={classes.mealsLoading}>Loading...</p>;
   }
 
   if (error) {
-    return (
-      <section className={classes.mealsError}>
-        <p>{error}</p>
-      </section>
-    );
+    content = <p className={classes.mealsError}>{error}</p>;
+  }
+
+  if (mealsList.length > 0) {
+    content = <ul>{mealsList}</ul>;
   }
 
   return (
     <section className={classes.meals}>
-      <Card>
-        <ul>{mealsList}</ul>
-      </Card>
+      <Card>{content}</Card>
     </section>
   );
 };
