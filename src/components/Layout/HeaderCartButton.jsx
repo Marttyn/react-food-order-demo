@@ -13,7 +13,6 @@ const HeaderCartButton = (props) => {
     if (cartCtx.items.length === 0) {
       return;
     }
-    console.log("effect");
     setBtnIsHighlighted(true);
 
     setTimeout(() => {
@@ -42,6 +41,6 @@ const HeaderCartButton = (props) => {
 
 HeaderCartButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-}
+};
 
 export default HeaderCartButton;
